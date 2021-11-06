@@ -3,7 +3,7 @@ extends KinematicBody2D
 signal is_dead
 signal is_hurt(new_life)
 
-const PlayerHurtSound = preload("res://player/PlayerHurtSound.tscn")
+const PlayerHurtSound = preload("res://player/player_hurt_sound.tscn")
 
 export var ACCELERATION : int = 500
 export var MAX_SPEED    : int =  80

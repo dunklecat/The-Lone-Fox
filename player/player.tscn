@@ -1,14 +1,14 @@
 [gd_scene load_steps=76 format=2]
 
-[ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://player/SwordHitbox.gd" type="Script" id=2]
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/sword_hit_box.gd" type="Script" id=2]
 [ext_resource path="res://effects/hit_box/hit_box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://player/Player.png" type="Texture" id=4]
+[ext_resource path="res://player/player.png" type="Texture" id=4]
 [ext_resource path="res://WhiteColor.gdshader" type="Shader" id=5]
 [ext_resource path="res://music and sounds/Swipe.wav" type="AudioStream" id=6]
 [ext_resource path="res://music and sounds/Evade.wav" type="AudioStream" id=7]
 [ext_resource path="res://effects/hurt_box/hurt_box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://effects/shadows/MediumShadow.png" type="Texture" id=9]
+[ext_resource path="res://effects/shadows/medium_shadow.png" type="Texture" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
