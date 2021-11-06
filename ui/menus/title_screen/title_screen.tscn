@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://effects/fade_effect/fade_effect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/menus/menu_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/fonts/minecraft_16.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/menus/title_screen/Player-standing.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/Minecraft.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://world/GrassBackground.png" type="Texture" id=6]
+[ext_resource path="res://ui/menus/title_screen/title_screen.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="CenterContainer" parent="Menu"]
+margin_right = 280.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="Menu/Title"]
+margin_left = 18.0
+margin_right = 262.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 0
+text = "THE LONE FOX"
+align = 1
+
+[node name="Subtitle" type="CenterContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 280.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="Menu/Subtitle"]
+margin_left = 39.0
+margin_right = 241.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "a Godot Action RPG game"
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 56.0
+margin_right = 280.0
+margin_bottom = 120.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 138.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+
+[node name="New Game" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 14.0
+margin_right = 138.0
+margin_bottom = 34.0
+
+[node name="Label" parent="Menu/CenterRow/Buttons/New Game" index="0"]
+text = "New Game"
+
+[node name="Exit" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 44.0
+margin_right = 138.0
+margin_bottom = 64.0
+
+[node name="Label" parent="Menu/CenterRow/Buttons/Exit" index="0"]
+text = "Exit"
+
+[node name="The Lone Fox" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 142.0
+margin_right = 280.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/The Lone Fox"]
+margin_left = 57.0
+margin_top = 19.0
+margin_right = 80.0
+margin_bottom = 45.0
+texture = ExtResource( 4 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 124.0
+margin_right = 280.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Version 0.1 - dunklecat"
+align = 2
+valign = 2
+
+[node name="FadeEffect" parent="." instance=ExtResource( 1 )]
+mouse_filter = 2
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/New Game" to="." method="_on_New_Game_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="fade_finished" from="FadeEffect" to="." method="_on_FadeIn_fade_finished"]
+
+[editable path="Menu/CenterRow/Buttons/New Game"]
+[editable path="Menu/CenterRow/Buttons/Exit"]
