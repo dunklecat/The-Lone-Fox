@@ -2,7 +2,7 @@
 
 ## Requirements
 
-[Godot 3.3.x](https://godotengine.org/download)
+[Godot 3.5.x](https://godotengine.org/download)
 
 ## Style guide
 
