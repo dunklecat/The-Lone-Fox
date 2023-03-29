@@ -124,7 +124,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_fonts/font = ExtResource( 3 )
-text = "Version 0.1 - dunklecat"
+text = "Version 0.1.0 - @dunklecat"
 align = 2
 valign = 2
 
